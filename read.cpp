@@ -13,17 +13,15 @@ leftup(){
 
 using namespace std;
 int main(void){
-	system("pause");
-	system("cd..");
-	system("start leitura.exe");
 	
-		ifstream file;
+	ifstream file;
 	string linha;
-	file.open("posicoes.txt");
+	file.open("positions.txt");
+	system("pause");
 	
 	if(file.is_open()){
 		while(getline(file, linha)){
-		leftdown();
+		
 		cout<<linha<<"\n";
 		
 		char x[3], y[3];
@@ -36,15 +34,22 @@ int main(void){
 		
 			y[f-6]=linha[f];
 		}
+		
 		int a=atoi(x);
 		int b=atoi(y);
 		
-		SetCursorPos(a, b);
+		
+	
+		
+
+				SetCursorPos(a, b);
+		
+		Sleep(1);
+	
 		
 		cout<<"\n--> "<<a<<", "<<b<<"\n";
 		
 	
 				}
-				leftup();
 	}
 }

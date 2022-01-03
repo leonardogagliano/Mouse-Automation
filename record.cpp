@@ -13,41 +13,29 @@ leftup(){
 	mouse_event(MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
 }
 
-void pathList();
-void createPath();
-
 int main(int argc, char **argv){
 	
-	//variables
-	int menuChoice;
-	char newPathName[10];
+	system("pause");
+	printf("\n Recording...");
 	
-	ofstream createFile;
-	ifstream readFile;
 	
-	//a menu to manage the saved positions
-	printf(" Mouse Path Automation\n\n"); //title
-	printf(" 1) List Saved Paths \n 2) Add A New Path \n 3) Delete A Path \n"); //actions
-	printf(" \nType the desired action number and press Enter: ");
-	scanf("%d", &menuChoice);
+	POINT a;
 	
-	if(menuChoice == 1){
-		
-	}else if(menuChoice == 2){
-		printf(" \nType the path name and press enter: ");
-		
-		
+	
+	ofstream file;
+	
+	file.open("positions.txt");
+	
+	for(int i=0; i<100; i++){ //"i" defines how many positions are saved in the path
+ 		GetCursorPos(&a);
+		file<<" "<<a.x<<"  "<<a.y<<"\n";
+		Sleep(10); //this pause defines the 'distance' between two positions
 	}
 	
+	printf("\n\n Finished. \n\n Now, open 'read.exe' to use this saved path.");
 	return 0;
 }
 
-void pathList(){
-	
-}
 
-void createPath(){
-	
-}
 
 
