@@ -15,6 +15,11 @@ leftup(){
 
 int main(int argc, char **argv){
 	
+	int pos;
+	printf(" Enter the number of positions to be saved: ");
+	scanf("%d", &pos);
+	
+	printf("\n\n ");
 	system("pause");
 	printf("\n Recording...");
 	
@@ -26,10 +31,10 @@ int main(int argc, char **argv){
 	
 	file.open("positions.txt");
 	
-	for(int i=0; i<100; i++){ //"i" defines how many positions are saved in the path
+	for(int i=0; i<pos; i++){ //"i" defines how many positions are saved in the path
  		GetCursorPos(&a);
 		file<<" "<<a.x<<"  "<<a.y<<"\n";
-		Sleep(10); //this pause defines the 'distance' between two positions
+		Sleep(10); //this pause defines the 'distance' each position
 	}
 	
 	printf("\n\n Finished. \n\n Now, open 'read.exe' to use this saved path.");
