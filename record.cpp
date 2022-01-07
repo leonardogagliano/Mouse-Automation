@@ -37,7 +37,8 @@ int main(int argc, char **argv){
 		Sleep(10); //this pause defines the 'distance' each position
 	}
 	
-	printf("\n\n Finished. \n\n Now, open 'read.exe' to use this saved path.");
+	printf("\n\n Finished. \n\n Now, open 'read.exe' to use this saved path.\n");
+	system("pause");
 	return 0;
 }
 
